@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container-fluid mt-2">
+
+        <!-- Main docs tabs -->
+        <div class="main-tabs-docs">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-mtd tabs-info z-depth-1" role="tablist">
+                                <li class="nav-item">
+                    <a id="docs-tab-overview" class="nav-link waves-light active" data-toggle="tab" href="#docsTabsOverview" role="tab"><i class="fas fa-book mr-2"></i>Home</a>
+                </li>
+                                <li class="nav-item">
+                    <a id="docs-tab-gettingstarted" class="nav-link waves-light" data-toggle="tab" href="#docsTabsAPI" role="tab"><i class="fas fa-download mr-2"></i>Uploads</a>
+                </li>
+                                   
+                            </ul>
+                            </div>
+                            </div>
+	
+	
+	  <div class="tab-content">
+                                <!--Overview-->
+                <div class="tab-pane fade in show active" id="docsTabsAPI" role="tabpanel">
+
+                    <!--Grid row-->
+                    <div class="row">
+                    HI
+                    </div>
+                    </div>
+                    
+                    </div>
+                    
+                    
+
+  <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
+    <a class="navbar-brand" href="#"><strong>Navbar</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/uploads">Uploads</a>
+        </li>
+      
+      </ul>
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <span th:utext="${userName}"></span>
+        </li>
+        <li class="nav-item">
+        	<form th:action="@{/logout}" method="get">
+			<button type="submit" class="btn btn-danger btn-rounded btn-rt btn-sm waves-effect waves-light">Logout</button>
+		</form>
+		</li>
+      
+      </ul>
+    </div>
+  </nav> -->
+
+
+<!--Main Navigation-->
+	
+	<form class="md-form" onsubmit="" enctype="multipart/form-data" th:action="@{/encryptFile}" method="post">
+  <div class="file-field medium">
+     <div class="btn btn-rounded aqua-gradient float-left">
+      <span>Choose file</span>
+      <input type="file" name="file">
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" placeholder="Upload your file">
+    </div>
+    <button type="submit" class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">Submit</button>
+  </div>
+</form>	
+
+<div class="form-group">
+  <label for="exampleFormControlTextarea3">File content</label>
+  <textarea class="form-control" id="clearText" rows="3" th:utext="${fileText}" form="resultForm"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="exampleFormControlTextarea3">Encrypted data</label>
+  <textarea class="form-control" id="encryptied_text" name="encryptedText" rows="3" th:utext="${fileEncryptedText}" form="resultForm"></textarea>
+</div>
+<form class="md-form" id="resultForm" th:action="@{/uploadEncryptFile}" method="post">
+<input type="hidden" name="fileName" th:value="${fileName}">
+<button type="submit" class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">Upload file</button>
+</form>
+
+
+<div class="alert alert-success" role="alert">
+    <span th:utext="${fileUploadSuccess}"></span>
+    
+    </div>
+
+		
+		<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+		<!-- Bootstrap tooltips -->
+		<script type="text/javascript" src="/js/popper.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<!-- MDB core JavaScript -->
+		<script type="text/javascript" src="/js/mdb.js"></script>
+</body>
+</html>
