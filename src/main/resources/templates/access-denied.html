@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 
 
@@ -14,7 +14,7 @@
     <link rel="manifest" href="/manifest.json">
 
     
-      <title>Bootstrap File Input - examples &amp; tutorial. Basic &amp; advanced usage - Material Design for Bootstrap</title>
+      <title>File Upload</title>
     
     <link rel="shortcut icon" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico" />
 
@@ -487,9 +487,7 @@ margin-top: 1.4rem; }
                                 <li class="nav-item">
                     <a id="docs-tab-gettingstarted" class="nav-link waves-light" data-toggle="tab" href="#docsTabsAPI" role="tab"><i class="fas fa-download mr-2"></i>Uploads</a>
                 </li>
-                                    <li class="nav-item">
-                        <a id="docs-tab-examples" class="nav-link waves-light" href="https://mdbootstrap.com/snippets/?tag=file-input&top=all" target="_blank"><i class="fas fa-th-large mr-2"></i>Examples & Customization</a>
-                    </li>
+                                
                             </ul>
 
             <div class="tab-content">
@@ -501,23 +499,7 @@ margin-top: 1.4rem; }
 
                         <!--Grid column: Content-->
                         <div class="col-lg-10 col-md-12">
-                        <div class="d-flex justify-content-end">
-                         <span class="mt-1 mr-2">Rate these docs</span>
-                            <span class="popover-form-container" id="rateTooltip"  data-page-id="45880" >
-
-                                                               <i class='fas fa-star stars py-2 px-1 popovers' data-page-template="docs" data-index="0" style='cursor: pointer' data-html="true" data-toggle="popover" data-placement="top"
-                                   data-content="" title=""></i>
-                                                               <i class='fas fa-star stars py-2 px-1 popovers' data-page-template="docs" data-index="1" style='cursor: pointer' data-html="true" data-toggle="popover" data-placement="top"
-                                   data-content="" title=""></i>
-                                                               <i class='fas fa-star stars py-2 px-1 popovers' data-page-template="docs" data-index="2" style='cursor: pointer' data-html="true" data-toggle="popover" data-placement="top"
-                                   data-content="" title=""></i>
-                                                               <i class='fas fa-star stars py-2 px-1 popovers' data-page-template="docs" data-index="3" style='cursor: pointer' data-html="true" data-toggle="popover" data-placement="top"
-                                   data-content="" title=""></i>
-                                                               <i class='fas fa-star stars py-2 px-1 popovers' data-page-template="docs" data-index="4" style='cursor: pointer' data-html="true" data-toggle="popover" data-placement="top"
-                                   data-content="" title=""></i>
-                                                        <!-- HTML to write -->
-                            </span>
-                        </div>
+                        
                             <!--Section: Docs content-->
                             <section class="documentation">
                               <style type="text/css">
@@ -595,278 +577,27 @@ margin-top: 1.4rem; }
 <section id="introduction">
 
   <!--Title-->
-  <h2 class="primary-heading">File Input</h2>
+  <h2 class="primary-heading">Upload Your file here.. </h2>
 
-  <h1 class="secondary-heading mb-4">Bootstrap File Input</h1>
-
-  <!--Description-->
-  <p>Bootstrap File Input is a field which the user can use to upload one or more files (photos, documents or any other
-    file type) from local storage.</p>
-
-  <p>Standard file inputs usually leave a lot to be desired in terms of design, but MDB takes care of that by enhancing
-    them with Material Design best practices.</p>
-
-  <p>Some of the most common use examples are:</p>
-
-  <ul>
-    <li>CSV upload to CRM system</li>
-    <li>Avatar picture upload</li>
-    <li>Simple GIF upload</li>
-  </ul>
-
-  <p>Below you can see a number of Bootstrap file inputs created with Material Design for Bootstrap.</p>
-
-  <p><strong><span class="font-weight-bold">Note: </span>If you need more advanced functionalities, have a look at our
-      <a href="https://mdbootstrap.com/plugins/jquery/file-upload/">Drag and drop file upload plugin</a>.</strong></p>
-
-  <hr class="my-4">
-
-  <!--Grid row-->
-  <div class="row">
-
-    <!--Grid column-->
-    <div class="col-md-6 mb-4">
-
-      <!--Title-->
-      <h2 class="secondary-heading">
-        Default file input
-      </h2>
-
-      <!--Description-->
-      <p>Default styling for Bootstrap File Input component</p>
-
-      <!--Section: Live preview-->
-      <section class="section-preview">
-
-        <div class="input-group my-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-          </div>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-          </div>
-        </div>
-
-      </section>
-      <!--Section: Live preview-->
-
-      <!--Section: Code-->
-      <section>
-        <!-- mdbsnippet --><div class="docs-pills">  <div class="d-flex justify-content-between">    <ul class="nav md-pills pills-grey"><li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#mdb_d3d71c5114b83a88e04251d7fe0a94e6" role="tab">HTML</a></li></ul></div><div class="tab-content"><div class="tab-pane fade active show" id="mdb_d3d71c5114b83a88e04251d7fe0a94e6" role="tabpanel"><pre class="grey lighten-3 px-3 mb-0 line-numbers language-html" ><code>
-
-            &lt;div class=&quot;input-group&quot;&gt;
-              &lt;div class=&quot;input-group-prepend&quot;&gt;
-                &lt;span class=&quot;input-group-text&quot; id=&quot;inputGroupFileAddon01&quot;&gt;Upload&lt;/span&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;custom-file&quot;&gt;
-                &lt;input type=&quot;file&quot; class=&quot;custom-file-input&quot; id=&quot;inputGroupFile01&quot; aria-describedby=&quot;inputGroupFileAddon01&quot;&gt;
-                &lt;label class=&quot;custom-file-label&quot; for=&quot;inputGroupFile01&quot;&gt;Choose file&lt;/label&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-
-          </pre></code></div></div></div><!-- /.mdbsnippet -->
-      </section>
-      <!--Section: Code-->
-
+ 	<form class="md-form" onsubmit="" enctype="multipart/form-data" th:action="@{/encryptFile}" method="post">
+  <div class="file-field medium">
+     <div class="btn btn-rounded aqua-gradient float-left">
+      <span>Choose file</span>
+      <input type="file" name="file">
     </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
-    <div class="col-md-6 mb-md-0 mb-4">
-
-      <!--Title-->
-      <h2 class="secondary-heading">
-        Material file input
-        <a href="https://mdbootstrap.com/products/jquery-ui-kit/" target="_blank" class="btn btn-danger btn-sm" role="button">MDB
-          Pro component
-          <i class="far fa-gem ml-1"></i>
-        </a>
-      </h2>
-
-      <!--Description-->
-      <p>Material Design styling for Bootstrap File Input component</p>
-
-      <!--Section: Live preview-->
-      <section class="section-preview">
-
-        <form class="md-form my-3">
-          <div class="file-field">
-            <div class="btn btn-primary btn-sm float-left">
-              <span>Choose file</span>
-              <input type="file">
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text" placeholder="Upload your file">
-            </div>
-          </div>
-        </form>
-
-      </section>
-      <!--Section: Live preview-->
-
-      <!--Section: Code-->
-      <section>
-        <!-- mdbsnippet --><div class="docs-pills">  <div class="d-flex justify-content-between">    <ul class="nav md-pills pills-grey"><li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#mdb_06723240a77eea1f487101b3e24fe16a" role="tab">HTML</a></li></ul></div><div class="tab-content"><div class="tab-pane fade active show" id="mdb_06723240a77eea1f487101b3e24fe16a" role="tabpanel"><pre class="grey lighten-3 px-3 mb-0 line-numbers language-html" ><code>
-
-            &lt;form class=&quot;md-form&quot;&gt;
-              &lt;div class=&quot;file-field&quot;&gt;
-                &lt;div class=&quot;btn btn-primary btn-sm float-left&quot;&gt;
-                  &lt;span&gt;Choose file&lt;/span&gt;
-                  &lt;input type=&quot;file&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;file-path-wrapper&quot;&gt;
-                  &lt;input class=&quot;file-path validate&quot; type=&quot;text&quot; placeholder=&quot;Upload your file&quot;&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/form&gt;
-
-          </pre></code></div></div></div><!-- /.mdbsnippet -->
-      </section>
-      <!--Section: Code-->
-
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" placeholder="Upload your file">
     </div>
-    <!--Grid column-->
-
+    <button type="submit" class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">Submit</button>
   </div>
-  <!--Grid row-->
+</form>	
 
-</section>
-<!--/Section: Intro-->
-
-<hr class="mb-5">
-
-<!--Section: -->
-<section id="improved">
-
-  <!--Title-->
-  <h2 class="section-heading mb-4">
-    Improved Default File-Input
-  </h2>
-
-  <!-- Description -->
-  <p>
-    This component allows you can add select files and see which files you picked. You have options: <code>severally</code>
-    or <code>multipy</code>. If you want choose more files than 1 you have to add <code>multiple</code> and <code>data-multiple-target</code>
-    to your input.
-  </p>
-
-  <div class="row">
-
-    <div class="col-md-6 mb-4">
-
-      <!--Title-->
-      <h2 class="secondary-heading mb-2">
-        One selected file
-      </h2>
-
-      <!--Section: Live preview-->
-      <section class="section-preview">
-
-        <div class="input-default-wrapper mt-3">
-
-          <span class="input-group-text mb-3" id="input1">Upload</span>
-
-          <input type="file" id="file-with-current" class="input-default-js">
-
-          <label class="label-for-default-js rounded-right mb-3" for="file-with-current"><span class="span-choose-file">Choose
-              file</span>
-
-            <div class="float-right span-browse">Browse</div>
-
-          </label>
-
-        </div>
+ 
 
       </section>
-      <!--Section: Live preview-->
+   
 
-      <!--Section: Code-->
-      <section>
-
-        <!-- mdbsnippet --><div class="docs-pills">  <div class="d-flex justify-content-between">    <ul class="nav md-pills pills-grey"><li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#mdb_9916198bbd18e96f23ef9ce351db41be" role="tab">HTML</a></li></ul></div><div class="tab-content"><div class="tab-pane fade active show" id="mdb_9916198bbd18e96f23ef9ce351db41be" role="tabpanel"><pre class="grey lighten-3 px-3 mb-0 line-numbers language-html" ><code>
-
-            &lt;div class=&quot;input-default-wrapper mt-3&quot;&gt;
-
-              &lt;span class=&quot;input-group-text mb-3&quot; id=&quot;input1&quot;&gt;Upload&lt;/span&gt;
-
-              &lt;input type=&quot;file&quot; id=&quot;file-with-current&quot; class=&quot;input-default-js&quot;&gt;
-
-              &lt;label class=&quot;label-for-default-js rounded-right mb-3&quot; for=&quot;file-with-current&quot;&gt;&lt;span class=&quot;span-choose-file&quot;&gt;Choose
-                  file&lt;/span&gt;
-
-                &lt;div class=&quot;float-right span-browse&quot;&gt;Browse&lt;/div&gt;
-
-              &lt;/label&gt;
-
-            &lt;/div&gt;
-
-          </pre></code></div></div></div><!-- /.mdbsnippet -->
-
-      </section>
-      <!--Section: Code-->
-
-    </div>
-
-    <div class="col-md-6 mb-4">
-
-      <!--Title-->
-      <h2 class="secondary-heading mb-2">
-        Multiple selected files
-      </h2>
-
-      <!--Section: Live preview-->
-      <section class="section-preview">
-
-        <div class="input-default-wrapper mt-3">
-
-          <span class="input-group-text mb-3" id="input2">Upload</span>
-
-          <input type="file" id="file-with-multi-file" class="input-default-js" data-multiple-target="{target} files selected"
-            multiple>
-
-          <label class="label-for-default-js rounded-right mb-3" for="file-with-multi-file"><span class="span-choose-file">Choose
-              file</span>
-
-            <div class="float-right span-browse">Browse</div>
-
-          </label>
-
-        </div>
-
-      </section>
-      <!--Section: Live preview-->
-
-      <!--Section: Code-->
-      <section>
-
-        <!-- mdbsnippet --><div class="docs-pills">  <div class="d-flex justify-content-between">    <ul class="nav md-pills pills-grey"><li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#mdb_29f05e074e27d2168def971aab95d7d6" role="tab">HTML</a></li></ul></div><div class="tab-content"><div class="tab-pane fade active show" id="mdb_29f05e074e27d2168def971aab95d7d6" role="tabpanel"><pre class="grey lighten-3 px-3 mb-0 line-numbers language-html" ><code>
-
-            &lt;div class=&quot;input-default-wrapper mt-5&quot;&gt;
-
-              &lt;span class=&quot;input-group-text mb-3&quot; id=&quot;input2&quot;&gt;Upload&lt;/span&gt;
-
-              &lt;input type=&quot;file&quot; id=&quot;file-with-multi-file&quot; class=&quot;input-default-js&quot; data-multiple-target=&quot;{target} files selected&quot;
-                multiple&gt;
-
-              &lt;label class=&quot;label-for-default-js rounded-right mb-3&quot; for=&quot;file-with-multi-file&quot;&gt;&lt;span class=&quot;span-choose-file&quot;&gt;Choose
-                  file&lt;/span&gt;
-
-                &lt;div class=&quot;float-right span-browse&quot;&gt;Browse&lt;/div&gt;
-
-              &lt;/label&gt;
-
-            &lt;/div&gt;
-
-          </pre></code></div></div></div><!-- /.mdbsnippet -->
-
-      </section>
-      <!--Section: Code-->
-
-    </div>
-  </div>
-
-</section>
+   
 <!--/Section: -->
 
 <hr class="mb-5">
