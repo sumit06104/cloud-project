@@ -61,7 +61,7 @@ public class FileUploadController {
         return modelAndView;
     }
 	
-	@RequestMapping(value="getFiles", method=RequestMethod.GET)
+	@RequestMapping(value="/getFiles", method=RequestMethod.GET)
 	public ModelAndView getFilesPerUser() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("filesList", storageService.getFiles());

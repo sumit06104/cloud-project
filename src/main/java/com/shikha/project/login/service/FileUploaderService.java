@@ -39,6 +39,7 @@ public class FileUploaderService {
 		FileEntity fileEntity = new FileEntity();
 		List<FileHistoryEntity> fileHistList = new ArrayList<FileHistoryEntity>();
 		
+		if(!entityList.isEmpty()) {			
 		for(FileEntity entity : entityList) {
 		
 			if (null != entity && decryptService.decrypt(new String(entity.getContent())).equals(decryptService.decrypt(new String(file)))) {
@@ -55,8 +56,7 @@ public class FileUploaderService {
 				ent.setUploadedby(user.getEmail());
 				ent.setUploadtype("Secondary");
 				ent.setFileEntity(entity);
-				entity.getFileHistory().add(ent);				
-			
+				entity.getFileHistory().add(ent);			
 				fileRepository.save(entity);
 			} 
 		}
@@ -74,6 +74,20 @@ public class FileUploaderService {
 		}
 		
 		}
+		}
+		else {
+			fileEntity.setContent(file);
+			fileEntity.setCreationDate(Calendar.getInstance().getTime());
+			fileEntity.setUpdateDate(Calendar.getInstance().getTime());
+			fileEntity.setFilename(fileName);
+			ent.setUploadedby(user.getEmail());
+			ent.setUploadtype("Initial");
+			ent.setFileEntity(fileEntity);
+			fileHistList.add(ent);
+			fileEntity.setFileHistory(fileHistList);
+			fileRepository.save(fileEntity);
+		}
+		
 		
 
 	}
@@ -83,15 +97,16 @@ public class FileUploaderService {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
 		List<FileEntity> fileList = fileRepository.findByEmail(user.getEmail());
-		FileInfo fileInfo = new FileInfo();
+		
 		List<FileInfo> fil = new ArrayList<FileInfo>();
-		for(int i=0; i<fileList.size();i++)
+		for(FileEntity entity : fileList)
 		{
-			fileInfo.setFileName(fileList.get(i).getFilename());
-			for(int j = 0; j<i; j++)
+			FileInfo fileInfo = new FileInfo();
+			fileInfo.setFileName(entity.getFilename());
+			for(FileHistoryEntity fileHist : entity.getFileHistory())
 			{
-				fileInfo.setUploadedBy(fileList.get(i).getFileHistory().get(j).getUploadedby());
-				fileInfo.setUploadType(fileList.get(i).getFileHistory().get(j).getUploadtype());
+				fileInfo.setUploadedBy(fileHist.getUploadedby());
+				fileInfo.setUploadType(fileHist.getUploadtype());
 			}
 			fil.add(fileInfo);
 		}

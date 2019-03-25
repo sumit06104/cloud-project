@@ -17,7 +17,7 @@ public interface FileRepository extends JpaRepository<FileEntity, Long> {
 	@Query("SELECT f from FileEntity f JOIN f.fileHistory fh WHERE f.filename= :filename AND fh.uploadedby= :userName")
 	FileEntity findByFilenameAndUserName(String filename, String userName);
 	
-	@Query("SELECT f.filename from FileEntity f JOIN f.fileHistory fh WHERE fh.uploadedby= :email")
+	@Query("SELECT f from FileEntity f JOIN f.fileHistory fh WHERE fh.uploadedby= :email")
 	List<FileEntity> findByEmail(String email);
 	
 	List<FileEntity> findByFilename(String filename);

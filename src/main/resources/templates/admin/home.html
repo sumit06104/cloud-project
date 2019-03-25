@@ -6,262 +6,311 @@
 
 
 <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="theme-color" content="#33b5e5">
-    <link rel="manifest" href="/manifest.json">
+<!-- Required meta tags always come first -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="theme-color" content="#33b5e5">
+<link rel="manifest" href="/manifest.json">
 
-    
-      <title>File Upload</title>
-    
-  
 
-   
+<title>File Upload</title>
+
+
+
+
 
 <!-- <link rel='stylesheet' id='wsl-widget-css'  href='https://mdbootstrap.com/wp-content/plugins/wordpress-social-login/assets/css/style.css?ver=5.0.3' type='text/css' media='all' /> -->
-<link rel='stylesheet' id='compiled.css-css'  href='/css/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='compiled.css-css' href='/css/style.min.css'
+	type='text/css' media='all' />
 
 </head>
 
-<body class="fixed-sn mdb-skin-custom" data-spy="scroll" data-target="#scrollspy" data-offset="15">
+<body class="fixed-sn mdb-skin-custom" data-spy="scroll"
+	data-target="#scrollspy" data-offset="15">
 
 
 
-<header>
-  
+	<header>
 
 
 
-<!-- Navbar-->
-<nav class="navbar fixed-top navbar-expand-md navbar-light white double-nav scrolling-navbar">
-  
-  
-    <!--Navigation icons-->
-    <ul class="nav navbar-nav nav-flex-icons ml-auto">
-      
-        
-      <!-- Login / register -->
-      <form th:action="@{/logout}" method="get">
-      <button type="submit" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Log Out</button>
-             <!--  <a id="navbar-static-login" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light" data-toggle="modal" data-target="#navbarLogin">Log Out
+
+		<!-- Navbar-->
+		<nav
+			class="navbar fixed-top navbar-expand-md navbar-light white double-nav scrolling-navbar">
+
+
+			<!--Navigation icons-->
+			<ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+
+				<!-- Login / register -->
+				<form th:action="@{/logout}" method="get">
+					<button type="submit"
+						class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Log
+						Out</button>
+					<!--  <a id="navbar-static-login" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light" data-toggle="modal" data-target="#navbarLogin">Log Out
           <i class="fas fa-sign-in-alt ml-2"></i>
         </a> -->
-        </form>
-          </ul>
-</nav>
-<!-- /.Navbar-->
-</header>
+				</form>
+			</ul>
+		</nav>
+		<!-- /.Navbar-->
+	</header>
 
 
-<style>
+	<style>
 .main-tabs-docs .nav-mtd {
-white-space: nowrap;
-overflow-x: auto;
-position: relative; }
-@media (min-width: 62rem) {
-  .main-tabs-docs .nav-mtd {
-    overflow-x: hidden; } }
-.main-tabs-docs .nav-mtd li a {
-  display: block;
-  padding: 20px 24px;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  font-weight: 500;
-  border-bottom: 3px solid #33b5e5; }
-  .main-tabs-docs .nav-mtd li a.active {
-    border-bottom: 3px solid;
-    color: #fff; }
-@media (min-width: 62em) {
-  .main-tabs-docs .nav-mtd li:first-child {
-    margin-left: 56px; } }
-
-.documentation .primary-heading {
-font-size: 2.7rem;
-font-weight: 500; }
-
-.documentation .secondary-heading {
-font-size: 1.5rem;
-font-weight: 500;
-color: #444343;
-overflow: hidden;
-padding-bottom: .3rem;
-margin-bottom: .7rem; }
-
-.documentation .section-heading {
-font-size: 2rem;
-font-weight: 600;
-margin-bottom: 1.4rem; }
-
-.documentation .docs-pills {
-margin-top: 1.4rem; }
-
-.documentation .section-preview {
-  border: 1px solid #e0e0e0;
-  padding: 15px; }
-
-@media only screen and (max-width: 991px) {
-  .sticky, .sticky2, .sticky3,
-  .sticky-placeholder {
-    display: none;
-  }
+	white-space: nowrap;
+	overflow-x: auto;
+	position: relative;
 }
 
+@media ( min-width : 62rem) {
+	.main-tabs-docs .nav-mtd {
+		overflow-x: hidden;
+	}
+}
 
+.main-tabs-docs .nav-mtd li a {
+	display: block;
+	padding: 20px 24px;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	font-weight: 500;
+	border-bottom: 3px solid #33b5e5;
+}
+
+.main-tabs-docs .nav-mtd li a.active {
+	border-bottom: 3px solid;
+	color: #fff;
+}
+
+@media ( min-width : 62em) {
+	.main-tabs-docs .nav-mtd li:first-child {
+		margin-left: 56px;
+	}
+}
+
+.documentation .primary-heading {
+	font-size: 2.7rem;
+	font-weight: 500;
+}
+
+.documentation .secondary-heading {
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: #444343;
+	overflow: hidden;
+	padding-bottom: .3rem;
+	margin-bottom: .7rem;
+}
+
+.documentation .section-heading {
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 1.4rem;
+}
+
+.documentation .docs-pills {
+	margin-top: 1.4rem;
+}
+
+.documentation .section-preview {
+	border: 1px solid #e0e0e0;
+	padding: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+	.sticky, .sticky2, .sticky3, .sticky-placeholder {
+		display: none;
+	}
+}
 </style>
 
 
 
-<main>
+	<main>
 
-    <div class="container-fluid mt-2">
+	<div class="container-fluid mt-2">
 
-        <!-- Main docs tabs -->
-        <div class="main-tabs-docs">
+		<!-- Main docs tabs -->
+		<div class="main-tabs-docs">
 
-            <!-- Nav tabs -->
-            <ul class="nav nav-mtd tabs-info z-depth-1" role="tablist">
-                                <li class="nav-item">
-                    <a id="docs-tab-overview" class="nav-link waves-light active" data-toggle="tab" href="#docsTabsOverview" role="tab"><i class="fas fa-book mr-2"></i>Home</a>
-                </li>
-                                <li class="nav-item">
-                    <a id="docs-tab-gettingstarted" class="nav-link waves-light" data-toggle="tab" href="#docsTabsAPI" role="tab"><i class="fas fa-download mr-2"></i>Uploads</a>
-                </li>
-                                
-                            </ul>
+			<!-- Nav tabs -->
+			<ul class="nav nav-mtd tabs-info z-depth-1" role="tablist">
+				<li class="nav-item"><a id="docs-tab-overview"
+					class="nav-link waves-light active" data-toggle="tab"
+					href="#docsTabsOverview" role="tab"><i class="fas fa-book mr-2"></i>Home</a>
+				</li>
+				<li class="nav-item"><a id="docs-tab-gettingstarted"
+					class="nav-link waves-light" data-toggle="tab" href="#docsTabsAPI"
+					role="tab"><i class="fas fa-download mr-2"></i>Uploads</a></li>
 
-            <div class="tab-content">
-                                <!--Overview-->
-                <div class="tab-pane fade in show active" id="docsTabsOverview" role="tabpanel">
+			</ul>
 
-                    <!--Grid row-->
-                    <div class="row">
+			<div class="tab-content">
+				<!--Overview-->
+				<div class="tab-pane fade in show active" id="docsTabsOverview"
+					role="tabpanel">
 
-                        <!--Grid column: Content-->
-                        <div class="col-lg-10 col-md-12">
-                        
-                                                  
+					<!--Grid row-->
+					<div class="row">
 
-<!--Section: Intro-->
-<section id="introduction">
+						<!--Grid column: Content-->
+						<div class="col-lg-10 col-md-12">
 
-  <!--Title-->
-  <h2 class="primary-heading">Upload Your file here.. </h2>
 
- 	<form class="md-form" onsubmit="" enctype="multipart/form-data" th:action="@{/encryptFile}" method="post">
-  <div class="file-field medium">
-     <div class="btn btn-rounded aqua-gradient float-left">
-      <span>Choose file</span>
-      <input type="file" name="file">
+
+							<!--Section: Intro-->
+							<section id="upload">
+
+								<!--Title-->
+								<h2 class="primary-heading">Upload Your file here..</h2>
+
+								<form class="md-form" onsubmit="" enctype="multipart/form-data"
+									th:action="@{/encryptFile}" method="post">
+									<div class="file-field medium">
+										<div class="btn btn-rounded aqua-gradient float-left">
+											<span>Choose file</span> <input type="file" name="file">
+										</div>
+										<div class="file-path-wrapper">
+											<input class="file-path validate" type="text"
+												placeholder="Upload your file">
+										</div>
+										<button type="submit"
+											class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">Submit</button>
+									</div>
+								</form>
+
+
+
+							</section>
+						
+							<section id="fileText">
+							<div class="form-group">
+  <textarea class="form-control" id="clearText" rows="3" th:utext="${fileText}" form="resultForm"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="exampleFormControlTextarea3">Encrypted data</label>
+  <textarea class="form-control" id="encryptied_text" name="encryptedText" rows="3" th:utext="${fileEncryptedText}" form="resultForm"></textarea>
+</div>
+<form class="md-form" id="resultForm" th:action="@{/uploadEncryptFile}" method="post">
+<input type="hidden" name="fileName" th:value="${fileName}">
+<button type="submit" class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">Upload file</button>
+</form>
+<div class="alert alert-success" role="alert">
+    <span th:utext="${fileUploadSuccess}"></span>
+    
     </div>
-    <div class="file-path-wrapper">
-      <input class="file-path validate" type="text" placeholder="Upload your file">
-    </div>
-    <button type="submit" class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">Submit</button>
-  </div>
-</form>	
-
- 
-
-      </section>
-      
-      
-   
+							
+							</section>
 
 
-                    </div>
-                    
-                    <!--Grid row-->
-
-                </div>
-                </div>
-                
-                
-                <!--/.Overview-->
-                                <!--API-->
-                <div class="tab-pane fade mt-4 pt-2" id="docsTabsAPI" role="tabpanel">
-
-                    <!--Grid row-->
-                    <div class="row">
-
-                        <!--Grid column: Content-->
-                        <div class="col-lg-10 col-md-12">
-
-                            <!--Section: Docs content-->
-                            <section class="documentation">
-                              <!--Section: Intro-->
-
-                <!--/.API-->
-                                </div>
-                <!--/.Examples-->
-            </div>
-
-        </div>
-        <!-- Main docs tabs -->
-        </div>
-        </div>
-
-    </div>
-
-</main>
 
 
-<style>
 
-main input[type=email]:focus,
-main input[type=password]:focus,
-main input[type=text]:focus,
-main input[type=url]:focus,
-main textarea:focus {
-      border: 0;
-  }
+						</div>
+
+						<!--Grid row-->
+
+					</div>
+				</div>
+
+
+				<!--/.Overview-->
+				<!--API-->
+				<div class="tab-pane fade mt-4 pt-2" id="docsTabsAPI"
+					role="tabpanel">
+
+					<!--Grid row-->
+					<div class="row">
+
+						<!--Grid column: Content-->
+						<div class="col-lg-10 col-md-12">
+
+							<!--Section: Docs content-->
+							<section class="documentation">
+							<form class="md-form" id="resultForm" th:action="@{/getFiles}" method="get">
+							<button type="submit" class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">See Uploads</button>
+							</form>
+								</section>
+								
+								<table>
+								<tr th:each="message : ${filesList}">
+     							   <td><a href="#" th:text="${message.fileName}">1 </a></td>
+     							   <td th:text="${message.uploadedBy}">Title ...</td>
+        							<td th:text="${message.uploadType}">Text ...</td>
+   								 </tr>
+								</table>
+						</div>
+						<!--/.Examples-->
+					</div>
+
+				</div>
+				<!-- Main docs tabs -->
+			</div>
+		</div>
+
+	</div>
+
+	</main>
+
+
+	<style>
+main input[type=email]:focus, main input[type=password]:focus, main input[type=text]:focus,
+	main input[type=url]:focus, main textarea:focus {
+	border: 0;
+}
 </style>
 
 
 
-  
-<!-- <script type='text/javascript' src='https://mdbootstrap.com/wp-admin/load-scripts.php?c=gzip&amp;load%5B%5D=wp-embed,jquery-ui-core,jquery-ui-widget,jquery-ui-mouse,jquery-ui-slider&amp;ver=5.0.3'></script> -->
-<script type='text/javascript' src='/js/compiled.0.min.js'></script>
+
+	<!-- <script type='text/javascript' src='https://mdbootstrap.com/wp-admin/load-scripts.php?c=gzip&amp;load%5B%5D=wp-embed,jquery-ui-core,jquery-ui-widget,jquery-ui-mouse,jquery-ui-slider&amp;ver=5.0.3'></script> -->
+	<script type='text/javascript' src='/js/compiled.0.min.js'></script>
 
 
-                                                                                                                                                                                                                                <script>
+	<script>
+		
+	</script>
 
-</script>
 
+	<script>
+		$(function() {
+			$(".sticky").sticky({
+				topSpacing : 90,
+				zIndex : 2,
+				stopper : "#footer"
+			});
+			$('a[href="#docsTabsAPI"]').on('shown.bs.tab', function(e) {
 
-    <script>
-      $(function () {
-        $(".sticky").sticky({
-          topSpacing: 90
-          , zIndex: 2
-          , stopper: "#footer"
-        });
-        $('a[href="#docsTabsAPI"]').on('shown.bs.tab', function (e) {
+				$(".sticky2").sticky({
+					topSpacing : 90,
+					zIndex : 2,
+					stopper : "#footer"
+				});
 
-          $(".sticky2").sticky({
-            topSpacing: 90
-            , zIndex: 2
-            , stopper: "#footer"
-          });
+			});
+			$('a[href="#docsTabsExamples"]').on('shown.bs.tab', function(e) {
 
-        });
-        $('a[href="#docsTabsExamples"]').on('shown.bs.tab', function (e) {
+				$(".sticky3").sticky({
+					topSpacing : 90,
+					zIndex : 2,
+					stopper : "#footer"
+				});
 
-          $(".sticky3").sticky({
-            topSpacing: 90
-            , zIndex: 2
-            , stopper: "#footer"
-          });
-
-        });
-      });
-    </script>
-    <!-- Agile CRM API
+			});
+		});
+	</script>
+	<!-- Agile CRM API
 <script id="_agile_min_js" async type="text/javascript" src="https://mdbootstrap.agilecrm.com/stats/min/agile-min.js"> </script>
 <script type="text/javascript" >
 var Agile_API = Agile_API || {}; Agile_API.on_after_load = function(){
@@ -275,4 +324,3 @@ Agile CRM API-->
 
 </html>
 
-  
