@@ -1,0 +1,6 @@
+applications:
+- name: data-dedup-webapp
+  path: target\shikha-project-0.0.1-SNAPSHOT.jar
+  memory: 1G
+  services:
+    - mysqldb

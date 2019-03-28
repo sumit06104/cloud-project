@@ -149,8 +149,7 @@
 					class="nav-link waves-light active" data-toggle="tab"
 					href="#docsTabsOverview" role="tab"><i class="fas fa-book mr-2"></i>Home</a>
 				</li>
-				<li class="nav-item"><a  th:href="@{/files}"
-					role="tab"><i class="fas fa-download mr-2"></i>Uploads</a></li>
+				
 
 			</ul>
 
@@ -160,101 +159,39 @@
 					role="tabpanel">
 
 					<!--Grid row-->
-					<div class="row">
-
-						<!--Grid column: Content-->
-						<div class="col-lg-10 col-md-12">
-
-
-
-							<!--Section: Intro-->
-							<section id="upload">
-
-								<!--Title-->
-								<h2 class="primary-heading">Upload Your file here..</h2>
-
-								<form class="md-form" onsubmit="" enctype="multipart/form-data"
-									th:action="@{/encryptFile}" method="post">
-									<div class="file-field medium">
-										<div class="btn btn-rounded aqua-gradient float-left">
-											<span>Choose file</span> <input type="file" name="file">
-										</div>
-										<div class="file-path-wrapper">
-											<input class="file-path validate" type="text"
-												placeholder="Upload your file">
-										</div>
-										<button type="submit"
-											class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">Submit</button>
-									</div>
-								</form>
-
-
-
-							</section>
-						
-							<section id="fileText">
-							<div class="form-group">
-  <textarea class="form-control" id="clearText" rows="3" th:utext="${fileText}" form="resultForm"></textarea>
-</div>
-
-<div class="form-group">
-  <label for="exampleFormControlTextarea3">Encrypted data</label>
-  <textarea class="form-control" id="encryptied_text" name="encryptedText" rows="3" th:utext="${fileEncryptedText}" form="resultForm"></textarea>
-</div>
-<form class="md-form" id="resultForm" th:action="@{/uploadEncryptFile}" method="post">
-<input type="hidden" name="fileName" th:value="${fileName}">
-<button type="submit" class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">Upload file</button>
-</form>
-<div class="alert alert-success" role="alert">
-    <span th:utext="${fileUploadSuccess}"></span>
-    
-    </div>
-							
-							</section>
-
-
-
-
-
-						</div>
-
-						<!--Grid row-->
-
-					</div>
+					
 				</div>
 
 
-				<!--/.Overview-->
-				<!--API-->
-				<div class="tab-pane fade mt-4 pt-2" id="docsTabsAPI"
-					role="tabpanel">
-
-					<!--Grid row-->
-					<div class="row">
-
-						<!--Grid column: Content-->
-						<div class="col-lg-10 col-md-12">
-
-							<!--Section: Docs content-->
-							<section class="documentation">
-							<form class="md-form" id="resultForm" th:action="@{/getFiles}" method="get">
-							<button type="submit" class="btn btn-light btn-rounded btn-rt btn-sm waves-effect waves-light">See Uploads</button>
-							</form>
-								</section>
-								
-								<table>
-								<tr th:each="message : ${filesList}">
-     							   <td><a href="#" th:text="${message.fileName}">1 </a></td>
-     							   <td th:text="${message.uploadedBy}">Title ...</td>
-        							<td th:text="${message.uploadType}">Text ...</td>
-   								 </tr>
-								</table>
-						</div>
-						<!--/.Examples-->
-					</div>
-
-				</div>
-				<!-- Main docs tabs -->
+				 <div th:switch="${filesList}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 th:case="null">No files yet!</h2>
+                    <div th:case="*">
+                        <h2 class="my-5">Files</h2>
+                        <table class="table table-striped table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>Uploader</th>
+                                    <th>UploadType</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="message : ${filesList}">
+                                    <td th:text="${message.fileName}"></td>
+                                    <td th:text="${message.uploadedBy}"></td>
+                                    <td th:text="${message.uploadType}"></td>
+                                    <td><a th:href="@{/file/{message.fileName}}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>      
+                   
+                </div>
+            </div>
+        </div>
 			</div>
 		</div>
 
@@ -296,7 +233,7 @@ main input[type=email]:focus, main input[type=password]:focus, main input[type=t
 					zIndex : 2,
 					stopper : "#footer"
 				});
-
+								
 			});
 			$('a[href="#docsTabsExamples"]').on('shown.bs.tab', function(e) {
 
@@ -308,6 +245,14 @@ main input[type=email]:focus, main input[type=password]:focus, main input[type=t
 
 			});
 		});
+		function getFiles(){
+			    $.get("http://localhost:8080/getFiles", function(data, status){
+			      alert("Data: " + data + "\nStatus: " + status);
+			    });
+			  
+			};
+	
+		
 	</script>
 	<!-- Agile CRM API
 <script id="_agile_min_js" async type="text/javascript" src="https://mdbootstrap.agilecrm.com/stats/min/agile-min.js"> </script>

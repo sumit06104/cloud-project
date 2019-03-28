@@ -3,6 +3,7 @@ package com.shikha.project.login.controller;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shikha.project.login.model.FileEntity;
+import com.shikha.project.login.model.FileInfo;
 import com.shikha.project.login.service.AsymmetricCryptography;
 import com.shikha.project.login.service.AsymmetricDecryptionService;
 import com.shikha.project.login.service.EncryptionException;
@@ -57,16 +59,24 @@ public class FileUploadController {
 		storageService.store(encryptedText.getBytes(), fileName);
         
         modelAndView.addObject("fileUploadSuccess", "File upload successfull");
-        modelAndView.setViewName("admin/home");
+        modelAndView.addObject("filesList", storageService.getFiles());
+        modelAndView.setViewName("admin/files");
         return modelAndView;
     }
-	
-	@RequestMapping(value="/getFiles", method=RequestMethod.GET)
-	public ModelAndView getFilesPerUser() {
+
+	@RequestMapping(value = "/files", method = RequestMethod.GET)
+    public ModelAndView getFiles() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("filesList", storageService.getFiles());
-		 modelAndView.setViewName("admin/home");
-		 return modelAndView;
+        modelAndView.setViewName("admin/files");
+        return modelAndView;
 	}
 	
+	@RequestMapping(value = "/file/{fileName}", method = RequestMethod.GET)
+    public ModelAndView showFile(@RequestParam String fileName) {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("filesList", storageService.getFiles());
+        modelAndView.setViewName("admin/files");
+        return modelAndView;
+	}
 }
