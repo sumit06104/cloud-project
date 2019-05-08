@@ -114,12 +114,13 @@ public class FileUploaderService {
 		return fil;
 	}
 	
-	/*public FileInfo getFile(String fileName)
+	public String getFileByUserId(String fileName)
 	{
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
-		FileEntity file = fileRepository.findByFileName(fileName);
+		FileEntity file = fileRepository.findByFilenameAndUserName(fileName, user.getEmail());
+		return new String(file.getContent());
 	}
-*/
+
 
 }

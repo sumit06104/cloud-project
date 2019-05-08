@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.shikha.project.login.model.FileEntity;
+import com.shikha.project.login.model.FileHistoryEntity;
 
 
 @Repository
@@ -21,4 +22,5 @@ public interface FileRepository extends JpaRepository<FileEntity, Long> {
 	List<FileEntity> findByEmail(String email);
 	
 	List<FileEntity> findByFilename(String filename);
+	
 }

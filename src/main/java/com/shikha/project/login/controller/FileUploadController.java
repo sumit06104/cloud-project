@@ -75,8 +75,9 @@ public class FileUploadController {
 	@RequestMapping(value = "/file/{fileName}", method = RequestMethod.GET)
     public ModelAndView showFile(@RequestParam String fileName) {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("filesList", storageService.getFiles());
-        modelAndView.setViewName("admin/files");
+		modelAndView.addObject("data", storageService.getFileByUserId(fileName));
+		modelAndView.addObject("fileName", fileName);
+        modelAndView.setViewName("admin/showFile");
         return modelAndView;
 	}
 }
